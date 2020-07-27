@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="inherited_view_op_course_form" model="ir.ui.view">
+        <field name="name">op.course.form.inherit</field>
+        <field name="model">op.course</field>
+        <field name="inherit_id" ref="openeducat_core.view_op_course_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/field[@name='max_unit_load']" position="after">
+                <field name="product_template_id"/>
+                <field name="modality_id"/>
+                <field name="hours"/>
+                <field name="credits"/>
+                <field name="ects"/>
+                <field name="level"/>
+                <field name="name_catalan"/>
+                <field name="acknowledgments"/>
+                <field name="reconeixements"/>
+            </xpath>
+
+            <xpath expr="//field[@name='evaluation_type']" position="replace">
+                <field name="evaluation_type_id"/>
+                <field name="section"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherited_view_op_course_form_ft" model="ir.ui.view">
+        <field name="name">op.course.form.pt.fees.term.inherit</field>
+        <field name="model">op.course</field>
+        <field name="inherit_id" ref="openeducat_fees.view_op_course_form_pt_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='fees_term_id']" position="replace">
+                <field name="period"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

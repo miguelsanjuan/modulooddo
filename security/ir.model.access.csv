@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_op_modalidad_admin,access.op.modalidad.admin,isep_courses_adapt.model_op_modalidad,base.group_system,1,1,1,0
+access_op_evaluation_type_admin,access.op.modalidad.admin,isep_courses_adapt.model_op_evaluation_type,base.group_system,1,1,1,0

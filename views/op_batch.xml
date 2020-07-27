@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="isep_courses_adapt.view_op_batch_form_inherited" model="ir.ui.view">
+            <field name="model">op.batch</field>
+            <field name="inherit_id" ref="openeducat_core.view_op_batch_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='course_id']" position="after">
+                    <field name="coordinador"/>
+                    <field name="modalidad_id"/>
+                </xpath>
+                <xpath expr="//form/sheet/group[@name='main']" position="after">
+                    <notebook>
+                        <page string="General">
+                            <group cols="4">
+                                <group string="Curso">
+                                    <field name="titulo"/>
+                                    <field name="titulo_catalan"/>
+                                    <field name="anyacademico"/>
+                                    <field name="nivel"/>
+                                    <field name="duracion"/>
+                                    <field name="totalhoras"/>
+                                    <field name="fechabaja"/>
+                                    <field name="codigouvic"/>
+                                </group>
+                                <group string="Otros">
+                                    <field name="ciudad"/>
+                                    <field name="diasemana"/>
+                                    <field name="lugarclase"/>
+                                    <field name="horario"/>
+                                </group>
+                            </group>
+                            <group string="Reconocimientos">
+                                <field name="reconocimientos"/>
+                                <field name="reconeixements"/>
+                            </group>
+                        </page>
+                        <page string="Estudiantes">
+                            <field name="student_lines" attrs="{'readonly': True}">
+                                <tree string="Student Lines" editable="bottom">
+                                    <field name="student_id"/>
+                                    <field name="course_id"/>
+                                    <field name="roll_number"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
